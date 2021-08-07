@@ -1,0 +1,36 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/8/7 下午8:37:39 
+使用方法：
+在 C:\Users\thoma\Desktop\shsmu_checkin\miniprogram\pages\index\index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 C:\Users\thoma\Desktop\shsmu_checkin\miniprogram\pages\index\index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="swiper-tab">
+      <view class="swiper-tab-list sk-transparent sk-text-32-3529-845 sk-text" data-current="0" style="font-weight: bold; background-position-x: 50%;">签到</view>
+      <view class="swiper-tab-list on sk-transparent sk-text-32-3529-411 sk-text" data-current="1" style="font-weight: bold; border: none; background-position-x: 50%;">记录</view>
+    </view>
+    <swiper class="swiper-box" current="0" duration="300" style="height:454px;" autoplay="false">
+      <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+        <view style="margin-top: 105px; min-height: 100%;">
+          <view style="font-weight: bold; background-position-x: 50%;" class="sk-transparent sk-text-14-2857-349 sk-text">检测到不在课室，无法签到</view>
+          <button class="button sk-transparent sk-button sk-pseudo sk-pseudo-circle" disabled="true" style="border: none;">Checkin</button>
+          <button class="button sk-transparent sk-button sk-pseudo sk-pseudo-circle" style="border: none;">Refresh</button>
+          <button class="button sk-transparent sk-button sk-pseudo sk-pseudo-circle" style="border: none;">Notice</button>
+          <button class="button sk-transparent sk-button sk-pseudo sk-pseudo-circle" style="border: none;">Admin</button>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</template>

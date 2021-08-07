@@ -17,7 +17,7 @@ Page({
     console.log(e);
     app.globalData.userInfo = e.detail.userInfo;
     var success = await login_api.login();
-    if(success)wx.redirectTo({url: '../index/index'});
+    if(success)wx.navigateTo({url: '../index/index'});
     else this.setData({hasUserInfo: true,top: 100});
   },
   submitFunc: function(e){
@@ -34,7 +34,7 @@ Page({
       success: function (res) {
         if(res.result){
           console.log("成功注册用户信息，跳转到主页");
-          wx.redirectTo({url: '../index/index'});
+          wx.navigateTo({url: '../index/index'});
         }
         else{
           console.log("查询数据库没找到该学生信息，禁止注册",res);

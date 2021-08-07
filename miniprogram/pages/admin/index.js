@@ -7,22 +7,22 @@ Page({
     })
   },
   bindScan: function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: './scan_mac/index',
     })
   },
   bindUploadUsers: function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: './upload_users/index',
     })
   },
   bindUploadSchedule: function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: './upload_schedule/index',
     })
   },
   bindCheck: function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: './check/index',
     })
   },

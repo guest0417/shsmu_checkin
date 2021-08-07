@@ -89,7 +89,7 @@ Page({
 
     // 获取用户数据
     var success = await login_api.getUserInfo(that);
-    if(!success)wx.redirectTo({url: '../first_login/index'});
+    if(!success)wx.navigateTo({url: '../first_login/index'});
     else{
       this.setData({isAdmin: app.globalData.userInfo.isAdmin});
     }
@@ -115,10 +115,10 @@ Page({
     scan_mac.getWifiList().then(result=>{checkin.checkLocaltion(this)});
   },
   bindDevelop: function(){
-    wx.redirectTo({url: 'https://github.com/JamesHoi'});
+    wx.navigateTo({url: 'https://github.com/JamesHoi'});
   },
   bindAdmin: function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../admin/index',
     })
   },

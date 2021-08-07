@@ -1,5 +1,5 @@
 /* pages/admin/index.wxss */
-
+@import "index.skeleton.wxss";
 .button{
   border-color: black;
   border: 2px solid;
