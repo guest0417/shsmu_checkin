@@ -10,12 +10,12 @@
 
 .on{ 
   color: #0062b2;
-  border-bottom: 3rpx solid #0062b2;
+  border-bottom: 5rpx solid #0062b2;
 }
 @media (prefers-color-scheme: dark) {
   .on{ 
-    color: orange;
-    border-bottom: 3rpx solid orange;
+    color: #ea703f;
+    border-bottom: 5rpx solid #ea703f;
   }
 }
 
@@ -38,7 +38,7 @@
     border: 2px solid;
     color: snow;
     margin-top:30px;
-    background-color: #666666;
+    background-color: #48494d;
   }
 }
 
@@ -96,6 +96,7 @@
   color: black;
   background-color: snow;
   overflow: hidden;
+  font-weight: bold;
 }
 @media (prefers-color-scheme: dark) {
   .kind-list-item {
@@ -104,8 +105,9 @@
     border-color: snow;
     border: 2px solid;
     color: snow;
-    background-color: #666666;
+    background-color: #48494d;
     overflow: hidden;
+    font-weight: bold;
   }
 }
 /*disabled*/
@@ -117,6 +119,7 @@
   color: #888;
   background-color: snow;
   overflow: hidden;
+  font-weight: bold;
 }
 @media (prefers-color-scheme: dark) {
   .kind-list-item-disabled {
@@ -125,8 +128,9 @@
     border-color: #888;
     border: 2px solid;
     color: #888;
-    background-color: #666666;
+    background-color: #48494d;
     overflow: hidden;
+    font-weight: bold;
   }
 }
 /*outdated*/
@@ -138,16 +142,18 @@
   color: red;
   background-color: snow;
   overflow: hidden;
+  font-weight: bold;
 }
 @media (prefers-color-scheme: dark) {
   .kind-list-item-outdated {
     margin: 18px;
     border-radius: 4px;
-    border-color: red;
+    border-color: #d15987;
     border: 2px solid;
-    color: red;
-    background-color: #666666;
+    color: #d15987;
+    background-color: #48494d;
     overflow: hidden;
+    font-weight: bold;
   }
 }
 /*roaming*/
@@ -159,16 +165,18 @@
   color: green;
   background-color: snow;
   overflow: hidden;
+  font-weight: bold;
 }
 @media (prefers-color-scheme: dark) {
   .kind-list-item-roaming {
     margin: 18px;
     border-radius: 4px;
-    border-color: greenyellow;
+    border-color: #5fa385;
     border: 2px solid;
-    color: greenyellow;
-    background-color: #666666;
+    color: #5fa385;
+    background-color: #48494d;
     overflow: hidden;
+    font-weight: bold;
   }
 }
 /*done*/
@@ -180,16 +188,18 @@
   color: #0062b2;
   background-color: snow;
   overflow: hidden;
+  font-weight: bold;
 }
 @media (prefers-color-scheme: dark) {
   .kind-list-item-done {
     margin: 18px;
     border-radius: 4px;
-    border-color: orange;
+    border-color: #ea703f;
     border: 2px solid;
-    color: orange;
-    background-color: #666666;
+    color: #ea703f;
+    background-color: #48494d;
     overflow: hidden;
+    font-weight: bold;
   }
 }
 
