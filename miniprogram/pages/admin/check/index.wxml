@@ -23,3 +23,9 @@
     </view>
     </block>
 </scroll-view>
+<view class='placeholder-view'></view>
+<picker mode="selector" value="{{index_}}" range="{{array}}" bindchange="bindFilterChange_">
+  <view class="picker" style="margin-top: 4px; margin-bottom: 0px;">
+    当前顯示: {{array[index_]}}
+  </view>
+</picker>

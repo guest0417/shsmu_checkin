@@ -1,5 +1,5 @@
 
-<view style=" margin-top: 40px;display: flex;align-items: center;justify-content: center;">
+<view style=" margin-top: 40px; display: flex; align-items: center; justify-content: center;  font-weight: bold;">
   {{text}}
 </view>
 <button class="button" bindtap="chooseExcel">{{status}}</button>

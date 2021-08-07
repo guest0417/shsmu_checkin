@@ -8,7 +8,7 @@
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 50}}px;" bindchange="bindChange">
     <swiper-item>
       <view style="margin-top: 105px; min-height: 100%;">
-        <view style="color: snow; font-weight: bold;">{{text}}</view>
+        <view style="font-weight: bold;">{{text}}</view>
         <button disabled="{{checkin}}" class="button" bindtap="bindCheckin">{{checkin_text}}</button>
         <button class="button" bindtap="bindRefresh">Refresh</button>
         <button class="button" bindtap="bindNotice">Notice</button>

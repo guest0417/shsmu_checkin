@@ -5,7 +5,9 @@ Page({
     winWidth: 0,
     winHeight: 0,
     index: 0,
+    index_: -1,
     date: "",
+    toggle: "",
     array: ['all', 'disabled', 'roaming', 'outdated'],
     list: [{
       id: 'view',
@@ -73,16 +75,23 @@ Page({
   },
   /*日期*/
   bindDateChange: function(e) {
-    console.log('filter picker发送选择改变，携带值为', e.detail.value)
+    console.log('date picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
     })
   },
-  /*Filter*/
+  /*Filter, index為選中狀態*/
   bindFilterChange: function(e) {
-    console.log('date picker发送选择改变，携带值为', e.detail.value)
+    console.log('filter picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
+    })
+  },
+  /*Filter, index_為當前toggle選中的紀錄的狀態*/
+  bindFilterChange_: function(e) {
+    console.log('filter picker发送选择改变，携带值为', e.detail.value, '打开', this.data.toggle)
+    this.setData({
+      index_: e.detail.value
     })
   },
   kindToggle(e) {
@@ -91,6 +100,7 @@ Page({
     for (let i = 0, len = list.length; i < len; ++i) {
       if (list[i].id === id) {
         list[i].open = !list[i].open
+        this.setData({toggle: i, index_: i}); //index_為狀態，現以i作橂擬
       } else {
         list[i].open = false
       }
