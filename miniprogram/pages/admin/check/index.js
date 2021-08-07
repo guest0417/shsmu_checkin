@@ -4,6 +4,7 @@ Page({
   data: {
     winWidth: 0,
     winHeight: 0,
+    index: 0,
     date: "",
     array: ['all', 'disabled', 'roaming', 'outdated'],
     list: [{

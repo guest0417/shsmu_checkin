@@ -1,7 +1,7 @@
 .picker{
   text-align: center;
-  margin: 18px;
-  margin-bottom: 0px;
+  margin-left: 18px;
+  margin-right: 18px;
   border-radius: 4px;
   border-color: #0062b2;
   border: 2px solid;
@@ -10,9 +10,9 @@
 }
 @media (prefers-color-scheme: dark) {
   .picker{
-    text-align: left;
-    margin: 18px;
-    margin-bottom: 0px;
+    text-align: center;
+    margin-left: 18px;
+    margin-right: 18px;
     border-radius: 4px;
     border-color: orange;
     border: 2px solid;

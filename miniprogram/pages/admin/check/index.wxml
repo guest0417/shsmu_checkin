@@ -1,10 +1,10 @@
 <picker mode="date" value="{{date}}" bindchange="bindDateChange">
-  <view class="picker">
+  <view class="picker" style="margin-top: 18px; margin-bottom: 4px;">
     当前日期: {{date}}
   </view>
 </picker>
 <picker mode="selector" value="{{index}}" range="{{array}}" bindchange="bindFilterChange">
-  <view class="picker" style="margin-top: 8px">
+  <view class="picker" style="margin-top: 4px; margin-bottom: 0px;">
     当前顯示: {{array[index]}}
   </view>
 </picker>
