@@ -1,5 +1,4 @@
 /* pages/first_login/index.wxss */
-
 .input{
   padding: 20px;
   margin-top:10px;

@@ -1,3 +1,4 @@
+
 <view style="margin-top: 50px;min-height: 100%;">
   <button class="button" bindtap="bindScan">扫描MAC</button>
   <button class="button" bindtap="bindUploadUsers">上传用户</button>

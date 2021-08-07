@@ -1,3 +1,4 @@
+
 <picker mode="date" value="{{date}}" bindchange="bindDateChange">
   <view class="picker" style="margin-top: 18px; margin-bottom: 4px;">
     当前日期: {{date}}

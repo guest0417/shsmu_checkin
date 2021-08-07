@@ -19,7 +19,7 @@
     "checkSiteMap": false,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": false,
+    "useMultiFrameRuntime": true,
     "useApiHook": true,
     "babelSetting": {
       "ignore": [],
@@ -28,12 +28,12 @@
     },
     "enableEngineNative": false,
     "useIsolateContext": false,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
-    "skeletonGenerateFilesWithoutConfirm": true
+    "showES6CompileOption": false,
+    "useApiHostProcess": true
   },
   "appid": "wx3418bcea868177e0",
   "projectname": "shsmu_checkin",

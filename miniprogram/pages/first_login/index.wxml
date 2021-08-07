@@ -1,4 +1,5 @@
 <!--index.wxml-->
+
 <view style="margin-top: {{top}}px;">
   <button class="button" wx:if="{{!hasUserInfo && canIUse}}" open-type='getUserInfo' bindgetuserinfo="getUserInfo">请点击获取授权</button>
   <block wx:else>
