@@ -21,14 +21,9 @@ Page({
       url: './upload_schedule/index',
     })
   },
-  bindReCheckin: function(){
+  bindCheck: function(){
     wx.redirectTo({
-      url: './recheck/index',
+      url: './check/index',
     })
   },
-  bindHistory: function(){
-    wx.redirectTo({
-      url: './history/index',
-    })
-  }
 })

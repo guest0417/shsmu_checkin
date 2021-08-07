@@ -1,0 +1,24 @@
+<picker mode="date" value="{{date}}" bindchange="bindDateChange">
+  <view class="picker">
+    当前日期: {{date}}
+  </view>
+</picker>
+<picker mode="selector" value="{{index}}" range="{{array}}" bindchange="bindFilterChange">
+  <view class="picker" style="margin-top: 8px">
+    当前顯示: {{array[index]}}
+  </view>
+</picker>
+<scroll-view scroll-y="true" style="height: 100%;">
+    <block wx:for-items="{{list}}" wx:key="index">
+    <view class="kind-list-item-roaming"> <!--"kind-list-item-" + "disabled||outdated||roaming||done"-->
+      <view id = "{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+        <view class="kind-list-text"><p>{{item.open}}: </p>{{item.name}}</view>
+      </view>
+      <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+        <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+          hello
+        </view>
+      </view>
+    </view>
+    </block>
+</scroll-view>

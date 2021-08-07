@@ -1,5 +1,6 @@
-<view style="margin-top: 150px;min-height: 100%;">
+<view style="margin-top: 50px;min-height: 100%;">
   <button class="button" bindtap="bindScan">扫描MAC</button>
   <button class="button" bindtap="bindUploadUsers">上传用户</button>
   <button class="button" bindtap="bindUploadSchedule">更新课表</button>
+  <button class="button" bindtap="bindCheck">查看紀錄</button>
 </view>

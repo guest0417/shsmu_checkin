@@ -5,7 +5,8 @@
     "pages/admin/index",
     "pages/admin/scan_mac/index",
     "pages/admin/upload_schedule/index",
-    "pages/admin/upload_users/index"
+    "pages/admin/upload_users/index",
+    "pages/admin/check/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "@navBackgroundColor",
