@@ -9,7 +9,8 @@
     当前顯示: {{array[index]}}
   </view>
 </picker>
-<scroll-view scroll-y="true" style="height: 100%;">
+<view class='placeholder' style="border-bottom: "></view>
+<scroll-view scroll-y="true" style="height: {{winHeight_}}px;">
     <block wx:for-items="{{list}}" wx:key="index">
     <view class="kind-list-item-outdated"> <!--"kind-list-item-" + "disabled||outdated||roaming||done"-->
       <view id = "{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
@@ -23,9 +24,9 @@
     </view>
     </block>
 </scroll-view>
-<view class='placeholder-view'></view>
+<view class='placeholder_'></view>
 <picker mode="selector" value="{{index_}}" range="{{array}}" bindchange="bindFilterChange_">
-  <view class="picker" style="margin-top: 4px; margin-bottom: 0px;">
-    当前顯示: {{array[index_]}}
+  <view class="picker" style="">
+    当前狀態: {{array[index_]}}
   </view>
 </picker>

@@ -4,11 +4,12 @@ Page({
   data: {
     winWidth: 0,
     winHeight: 0,
+    winHeight_: 0,
     index: 0,
     index_: -1,
     date: "",
     toggle: "",
-    array: ['all', 'disabled', 'roaming', 'outdated'],
+    array: ['all', 'disabled', 'roaming', 'outdated', 'done'],
     list: [{
       id: 'view',
       name: '视图容器',
@@ -34,22 +35,22 @@ Page({
       name: '媒体组件',
       open: false,
       pages: ['image', 'audio', 'video', 'camera']
+    },
+    {
+      id: 'a',
+      name: '表单组件',
+      open: false,
+      pages: ['button', 'checkbox', 'form', 'input', 'label', 'picker', 'picker-view', 'radio', 'slider', 'switch', 'textarea']
     }, {
-      id: 'map',
-      name: '地图',
-      pages: ['map']
+      id: 'b',
+      name: '导航',
+      open: false,
+      pages: ['navigator']
     }, {
-      id: 'canvas',
-      name: '画布',
-      pages: ['canvas']
-    }, {
-      id: 'open',
-      name: '开放能力',
-      pages: ['ad', 'open-data', 'web-view']
-    },{
-    id: 'open',
-      name: '开放能力',
-      pages: ['ad', 'open-data', 'web-view']
+      id: 'c',
+      name: '媒体组件',
+      open: false,
+      pages: ['image', 'audio', 'video', 'camera']
     }
     ]
   },
@@ -62,7 +63,8 @@ Page({
       success: function( res ) {
         that.setData( {
           winWidth: res.windowWidth,
-          winHeight: res.windowHeight
+          winHeight: res.windowHeight,
+          winHeight_: res.windowHeight*0.8,
         });
       }
     })
