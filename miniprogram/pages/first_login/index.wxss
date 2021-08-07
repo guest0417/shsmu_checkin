@@ -1,0 +1,22 @@
+/* pages/first_login/index.wxss */
+
+.input{
+  padding: 20px;
+  margin-top:10px;
+}
+
+.button{
+  border-color: black;
+  color: black;
+  border: 2px solid;
+  margin-top:30px;
+}
+@media (prefers-color-scheme: dark) {
+  .button{
+    border-color: snow;
+    color: snow;
+    border: 2px solid;
+    margin-top:30px;
+    background-color: #666666;
+  }
+}

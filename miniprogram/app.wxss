@@ -1,0 +1,46 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+
+button {
+  background: initial;
+}
+
+button:focus{
+  outline: 0;
+}
+
+button::after{
+  border: none;
+}
+
+page {
+  background: snow;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.disable {
+  color: #888;
+}
+
+.request-text {
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  word-break: break-all;
+}
+
+@media (prefers-color-scheme: dark) {
+  page {
+    background: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}

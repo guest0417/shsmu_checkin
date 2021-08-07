@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/first_login/index",
+    "pages/admin/index",
+    "pages/admin/scan_mac/index",
+    "pages/admin/upload_schedule/index",
+    "pages/admin/upload_users/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "@navBackgroundColor",
+    "navigationBarTitleText": "课堂签到",
+    "navigationBarTextStyle": "@navTextStyle"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要获取您的位置信息进行签到"
+    }
+  },
+  "style": "v2",
+  "darkmode": true,
+  "themeLocation": "theme.json"
+}

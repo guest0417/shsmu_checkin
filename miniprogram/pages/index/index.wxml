@@ -1,0 +1,34 @@
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">签到</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">记录</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 50}}px;" bindchange="bindChange">
+    <swiper-item>
+      <view style="margin-top: 105px; min-height: 100%;">
+        <view>{{text}}</view>
+        <button disabled="{{checkin}}" class="button" bindtap="bindCheckin">{{checkin_text}}</button>
+        <button class="button" bindtap="bindRefresh">Refresh</button>
+        <button class="button" bindtap="bindNotice">Notice</button>
+        <button class="button" wx:if="{{isAdmin}}" bindtap="bindAdmin">Admin</button>
+        <view style="margin-top: 20px;" wx:if="{{!isAdmin}}">Times of violation：{{checkin_count}}</view>
+        <view wx:if="{{!isAdmin}}" style="margin-top: 20px;" bindtap="bindDevelop">Beta 1.0</view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+    <scroll-view scroll-y="true" style="height: 100%;">
+    <block wx:for-items="{{list}}" wx:key="index">
+    <view class="kind-list-item-roaming"> <!--"kind-list-item-" + "disabled||outdated||roaming||done"-->
+      <view id = "{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+        <view class="kind-list-text"><p wx:if="{{isAdmin}}">{{item.open}}: </p>{{item.name}}</view>
+      </view>
+      <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+        <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+          hello
+        </view>
+      </view>
+    </view>
+    </block>
+    </scroll-view>
+    </swiper-item>
+</swiper>
