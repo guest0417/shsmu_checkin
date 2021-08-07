@@ -5,7 +5,7 @@ const db = cloud.database()
 
 exports.main = async(event, context) => {
   let fileID = event.fileID;
-  let class_ = event.class;
+  var class_ = event.class;
   //1,通过fileID下载云存储里的excel文件
   const res = await cloud.downloadFile({
     fileID: fileID,
