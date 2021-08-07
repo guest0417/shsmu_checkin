@@ -10,7 +10,7 @@
 </picker>
 <scroll-view scroll-y="true" style="height: 100%;">
     <block wx:for-items="{{list}}" wx:key="index">
-    <view class="kind-list-item-roaming"> <!--"kind-list-item-" + "disabled||outdated||roaming||done"-->
+    <view class="kind-list-item-outdated"> <!--"kind-list-item-" + "disabled||outdated||roaming||done"-->
       <view id = "{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
         <view class="kind-list-text"><p>{{item.open}}: </p>{{item.name}}</view>
       </view>
