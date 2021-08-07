@@ -35,7 +35,7 @@
     "minifyWXSS": true
   },
   "appid": "wx3418bcea868177e0",
-  "projectname": "checkin-new",
+  "projectname": "shsmu_checkin",
   "libVersion": "2.8.1",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
