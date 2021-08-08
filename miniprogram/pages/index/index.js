@@ -57,6 +57,31 @@ Page({
   ]
   },
 
+  onLoad: async function() {
+    var that = this;
+    wx.setNavigationBarTitle({
+      title: '课堂签到'
+    })
+    wx.getSystemInfo( {
+      success: function( res ) {
+        that.setData( {
+          winWidth: res.windowWidth,
+          winHeight: res.windowHeight
+        });}
+    });
+    checkin.checkTime();
+    scan_mac.startWifi();
+    scan_mac.getLocation();
+    scan_mac.getWifiList().then(result=>{checkin.checkLocaltion(that)}); 
+
+    // 获取用户数据
+    var success = await login_api.getUserInfo(that);
+    if(!success)wx.navigateTo({url: '../first_login/index'});
+    else{
+      this.setData({isAdmin: app.globalData.userInfo.isAdmin});
+    }
+  },
+  
   kindToggle(e) {
     const id = e.currentTarget.id
     const list = this.data.list
@@ -70,31 +95,6 @@ Page({
     this.setData({list})
   },
 
-  onLoad: async function() {
-    var that = this;
-    wx.setNavigationBarTitle({
-      title: '课堂签到'
-    })
-    wx.getSystemInfo( {
-      success: function( res ) {
-        that.setData( {
-          winWidth: res.windowWidth,
-          winHeight: res.windowHeight
-        });}
-    });
-    //checkin.getRecord(that);
-    scan_mac.startWifi();
-    scan_mac.getLocation();
-    scan_mac.getWifiList().then(result=>{checkin.checkLocaltion(that)}); 
-
-    // 获取用户数据
-    var success = await login_api.getUserInfo(that);
-    if(!success)wx.navigateTo({url: '../first_login/index'});
-    else{
-      this.setData({isAdmin: app.globalData.userInfo.isAdmin});
-    }
-  },
-  
   //  tab切换逻辑
   swichNav: function( e ) {
       var that = this;

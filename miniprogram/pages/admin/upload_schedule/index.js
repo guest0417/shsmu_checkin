@@ -2,6 +2,7 @@ Page({
   data: {
     text: "文件大小不能超过4MB,名称为班级全称",
     status: "选择档案",
+    status_: "上传并解析档案",
     path: "",
     filename: "",
     uploading: false
@@ -57,7 +58,7 @@ Page({
   uploadExcel() {
     var that = this
     if(that.data.uploading)return;
-    that.setData({uploading: true});
+    that.setData({status_: "請稍候", uploading: true});
     wx.cloud.uploadFile({
       cloudPath: new Date().getTime()+ '.xls',
       filePath: that.data.path,
@@ -87,8 +88,8 @@ Page({
           title: '解析成功',  
           content: "已上传"+ that.data.filename,
           success: function(res) {}  
-          }) 
-        that.setData({text: "請选择下一份數據"});
+        }) 
+        that.setData({status_: "上传并解析档案", text: "請选择下一份數據"});
       },
       fail: err => {
         console.log("解析失败", err);
@@ -97,7 +98,7 @@ Page({
           icon: "error",
           duration: 5000,
         })
-        that.setData({text: "出現錯誤，請重新進行上傳操作",uploading: false});
+        that.setData({status_: "上传并解析档案", text: "出現錯誤，請重新進行上傳操作",uploading: false});
       }
     })
   }

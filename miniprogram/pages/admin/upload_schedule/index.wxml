@@ -3,5 +3,5 @@
   {{text}}
 </view>
 <button class="button" bindtap="chooseExcel">{{status}}</button>
-<button class="button" bindtap="uploadExcel">上传并解析档案</button>
+<button class="button" bindtap="uploadExcel">{{status_}}</button>
 <button class="button" bindtap="downloadExcel">下载demo</button>

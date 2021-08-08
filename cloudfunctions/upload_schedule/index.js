@@ -26,8 +26,8 @@ exports.main = async(event, context) => {
           .add({
             data: {
               name: row[0], //
-              start_time: row[1], //
               weekday: row[2], //
+              start_time: row[3], //
               class: class_,
             }
           })

@@ -1,5 +1,6 @@
 module.exports = {
   checkin: checkin,
+  checkTime: checkTime,
   checkLocaltion: checkLocaltion,
 }
 
@@ -16,7 +17,6 @@ function checkin(page){
       checkin_mode: app.globalData.checkin_mode,
       nickname: app.globalData.userInfo.nickname,
       student_id: app.globalData.userInfo.student_id,
-      is_recheck: false,
       mode: "checkin"
     },
     success: function (res) {
@@ -33,6 +33,21 @@ function checkin(page){
     },fail: console.error
   })
 });
+}
+
+function checkTime(){
+  wx.cloud.callFunction({
+    // 云函数名称
+    name: 'checkin',
+    data: {
+      wifiList: "",
+      mode: "checkTime"
+    },
+    success: function (res) {
+      console.log("获取到Time信息");
+      console.log(res);
+    },fail: console.error
+  })
 }
 
 function checkLocaltion(page){
