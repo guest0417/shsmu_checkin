@@ -3,6 +3,7 @@
 </view>
 <button class="button" bindtap="bindScan">扫描</button>
 <button class="button" bindtap="bindUpload">上传数据</button>
+<view style="margin: 10px"></view>
 <block wx:for="{{listData}}" wx:key="{[ssid]}">
   <view>
     <view class="td">    SSID:{{item.SSID}}</view>

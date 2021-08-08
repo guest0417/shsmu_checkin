@@ -9,7 +9,7 @@
     当前顯示: {{array[index]}}
   </view>
 </picker>
-<view class='placeholder' style="border-bottom: "></view>
+<view class='placeholder'></view>
 <scroll-view scroll-y="true" style="height: {{winHeight_}}px;">
     <block wx:for-items="{{list}}" wx:key="index">
     <view class="kind-list-item-outdated"> <!--"kind-list-item-" + "disabled||outdated||roaming||done"-->

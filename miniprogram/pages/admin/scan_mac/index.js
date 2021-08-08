@@ -3,9 +3,10 @@ var scan_mac = require("../../include/scan_mac.js");
 
 Page({
   data: {
-    status: "扫描后將显示範圍內的mac",
+    status: "扫描后将显示范围內的mac",
     listData: [],
-    success_count: 0
+    success_count: 0,
+    uploading: false
   },
 
   onLoad: function () {
@@ -16,19 +17,14 @@ Page({
 
   bindScan: function(){
     scan_mac.getWifiList();
-    this.setData({listData:app.globalData.wifiList})
-    this.setData({status:"己執行掃描"})
-    wx.showModal({  
-      title: '',  
-      content: '掃描成功',
-      success: function(res) {}  
-    })  
+    this.setData({listData:app.globalData.wifiList});
+    this.setData({status:"已扫描到" + app.globalData.wifiList.length + "個Mac地址",success_count:0,uploading:false});
   },
 
   bindUpload: function(){
     var that = this;
-    that.setData({status:"正在上传"})
-    console.log(this.data.listData.length);
+    if(that.data.uploading)return;
+    that.setData({uploading: true,status:"正在上传"})
     var data_length = this.data.listData.length;
     for (var i=0;i<data_length;i++)
     { 
@@ -40,13 +36,17 @@ Page({
         },
         success: function (res) {
           var count = that.data.success_count+1;
-          that.setData({success_count: count,status: "上传成功"+String(count)+"/"+String(data_length)});
+          that.setData({success_count: count,status: "成功上传 "+String(count)+"/"+String(data_length)});
         },
         fail: function(res){
-          console.log("upload error");
-          console.log(res);
+          that.setData({success_count: count,status: "上传失败 "});
+          console.log("upload error",res);
         }
       })
     }
+    wx.showModal({
+      title: "所有數據已被成功上傳",
+      icon: "success",
+    })
   }
 })
