@@ -29,9 +29,7 @@ exports.main = async (event, context) => {
     var time_ind = ((await db.collection("schedule").where({weekday:day}).get()).data[i].start_time);
     if(time_ind-600<now<time_ind) break;
   }
-  if(time_ind<now) return time_ind;
-  else if(event.mode == "checkTime") return time_ind;
-
+  if(time_ind<now) return false;
   //判断mac
   var count = 0;
   for (var i=0;i<event.wifiList.length;i++){
@@ -40,7 +38,7 @@ exports.main = async (event, context) => {
     if(count>=8)break;
   }
   if(count<8)return false;
-  else if(event.mode == "checkLocation")return true;
+  else if(event.mode == "check")return true;
   
   db.collection("checkin").add({
     data:{
@@ -49,7 +47,6 @@ exports.main = async (event, context) => {
       time: time,
       location: event.location,
       nickname: event.nickname,
-      checkin_mode: event.checkin_mode,
     }
   })
   return true;

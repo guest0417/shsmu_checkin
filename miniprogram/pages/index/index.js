@@ -69,10 +69,9 @@ Page({
           winHeight: res.windowHeight
         });}
     });
-    checkin.checkTime();
     scan_mac.startWifi();
     scan_mac.getLocation();
-    scan_mac.getWifiList().then(result=>{checkin.checkLocaltion(that)}); 
+    scan_mac.getWifiList().then(result=>{checkin.check(that)}); 
 
     // 获取用户数据
     var success = await login_api.getUserInfo(that);
@@ -112,7 +111,7 @@ Page({
     checkin.checkin(this);
   },
   bindRefresh: function(){
-    scan_mac.getWifiList().then(result=>{checkin.checkLocaltion(this)});
+    scan_mac.getWifiList().then(result=>{checkin.check(this)});
   },
   bindDevelop: function(){
     wx.navigateTo({url: 'https://github.com/JamesHoi'});
