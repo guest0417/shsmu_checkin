@@ -24,7 +24,7 @@ function checkin(page){
       if(res.result){
         var checkin_text = app.globalData.checkin_mode == 1 ? "Done" : "Checkin";
         app.globalData.checkin_mode = !(app.globalData.checkin_mode-1)+1;
-        if(res.result === 1)page.setData({text:"打卡成功",checkin_text:"Done",checkin:true});
+        if(res.result === 1)page.setData({text:"簽到成功",checkin_text:"Done",checkin:true});
         else page.setData({text:"失敗，請重試",checkin_text:checkin_text});
       }else page.setData({checkin:true,text: "检测條件不符合，无法打卡"});
       return resolve();
@@ -43,7 +43,7 @@ function check(page){
       mode: "check"
     },
     success: function (res) {
-      console.log("获取到時間和位置信息");
+      console.log("获取到時間,歷史和位置信息");
       console.log(res);
       if(res.result){
         page.setData({checkin:false, text: "按打卡签到"})

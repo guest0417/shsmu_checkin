@@ -22,7 +22,6 @@ exports.main = async (event, context) => {
   var time = PrefixInteger(date.getHours(),2)+":"+PrefixInteger(date.getMinutes(),2)+":"+PrefixInteger(date.getSeconds(),2);
   var now = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
   var day = date.getDay();
-
   //判断Time
   var count = await db.collection("schedule").where({weekday:day}).count();
   for (var i=0; i<count; i++){
@@ -30,6 +29,9 @@ exports.main = async (event, context) => {
     if(time_ind-600<now<time_ind) break;
   }
   if(time_ind<now) return false;
+  //判断簽到沒有
+  var history = (await db.collection("checkin").where({nickname:nickname, time:time_ind}).get()).data;
+  if(history.length) return false; //setdata
   //判断mac
   var count = 0;
   for (var i=0;i<event.wifiList.length;i++){
@@ -44,7 +46,7 @@ exports.main = async (event, context) => {
     data:{
       openid: wxContext.OPENID,
       date: today,
-      time: time,
+      time: time_ind,
       location: event.location,
       nickname: event.nickname,
     }
