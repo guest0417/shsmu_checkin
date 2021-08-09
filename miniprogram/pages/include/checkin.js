@@ -14,7 +14,7 @@ function checkin(page){
       wifiList: app.globalData.wifiList,
       location: app.globalData.location,
       checkin_mode: app.globalData.checkin_mode,
-      nickname: app.globalData.userInfo.nickname,
+      //nickname: app.globalData.userInfo.nickname,
       student_id: app.globalData.userInfo.student_id,
       mode: "checkin"
     },
@@ -40,11 +40,11 @@ function check(page){
     data: {
       wifiList: app.globalData.wifiList,
       location: app.globalData.location,
+      student_id: app.globalData.userInfo.student_id,
       mode: "check"
     },
     success: function (res) {
-      console.log("获取到時間,歷史和位置信息");
-      console.log(res);
+      console.log("获取到時間,歷史和位置信息", res);
       if(res.result){
         page.setData({checkin:false, text: "按打卡签到"})
       }

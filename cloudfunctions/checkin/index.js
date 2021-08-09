@@ -26,11 +26,11 @@ exports.main = async (event, context) => {
   var count = await db.collection("schedule").where({weekday:day}).count();
   for (var i=0; i<count; i++){
     var time_ind = ((await db.collection("schedule").where({weekday:day}).get()).data[i].start_time);
-    if(time_ind-600<now<time_ind) break;
+    if(time_ind-600<now<time_ind+300) break;
   }
-  if(time_ind<now) return false;
+  if(!(time_ind-600<now<time_ind+300)&&1==0) return false;
   //判断簽到沒有
-  var history = (await db.collection("checkin").where({nickname:nickname, time:time_ind}).get()).data;
+  var history = (await db.collection("checkin").where({student_id:event.student_id, time:time_ind}).get()).data;
   if(history.length) return false; //setdata
   //判断mac
   var count = 0;
@@ -48,7 +48,7 @@ exports.main = async (event, context) => {
       date: today,
       time: time_ind,
       location: event.location,
-      nickname: event.nickname,
+      student_id: event.student_id,
     }
   })
   return true;
