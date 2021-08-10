@@ -21,7 +21,7 @@
     <scroll-view scroll-y="true" style="height: 100%;">
     <block wx:for-items="{{list}}" wx:key="index">
     <view class="kind-list-item-roaming"> <!--"kind-list-item-" + "disabled||outdated||roaming||done"-->
-      <view id = "{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+      <view id = "{{item._id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
         <view class="kind-list-text"><p wx:if="{{isAdmin}}">{{item.open}}: </p>{{item.name}}</view>
       </view>
       <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">

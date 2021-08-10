@@ -36,7 +36,7 @@ function getUserInfo() {
         });
       },
       fail: function (res) {
-        console.log("获取userinfo失败",res);
+        console.log("获取user info失败",res);
         resolve(false);
       }
     })

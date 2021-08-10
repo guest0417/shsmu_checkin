@@ -1,5 +1,6 @@
 const app = getApp();
 var login_api = require('../include/login_api.js');
+var get_schedule = require('../include/get_schedule.js');
 var scan_mac = require("../include/scan_mac.js");
 var checkin = require("../include/checkin.js");
 
@@ -12,49 +13,7 @@ Page({
     checkin: true,
     checkin_text: "Checkin",
     isAdmin: false,
-    list: [{
-      id: 'view',
-      name: '视图容器',
-      open: false,
-      pages: ['view', 'scroll-view', 'swiper', 'movable-view', 'cover-view']
-    }, {
-      id: 'content',
-      name: '基础内容',
-      open: false,
-      pages: ['text', 'icon', 'progress', 'rich-text']
-    }, {
-      id: 'form',
-      name: '表单组件',
-      open: false,
-      pages: ['button', 'checkbox', 'form', 'input', 'label', 'picker', 'picker-view', 'radio', 'slider', 'switch', 'textarea']
-    }, {
-      id: 'nav',
-      name: '导航',
-      open: false,
-      pages: ['navigator']
-    }, {
-      id: 'media',
-      name: '媒体组件',
-      open: false,
-      pages: ['image', 'audio', 'video', 'camera']
-    }, {
-      id: 'map',
-      name: '地图',
-      pages: ['map']
-    }, {
-      id: 'canvas',
-      name: '画布',
-      pages: ['canvas']
-    }, {
-      id: 'open',
-      name: '开放能力',
-      pages: ['ad', 'open-data', 'web-view']
-    },{
-    id: 'open',
-      name: '开放能力',
-      pages: ['ad', 'open-data', 'web-view']
-    }
-  ]
+    list: [],
   },
 
   onLoad: async function() {
@@ -78,6 +37,7 @@ Page({
     if(!success)wx.navigateTo({url: '../first_login/index'});
     else{
       this.setData({isAdmin: app.globalData.userInfo.isAdmin});
+      get_schedule.getSchedule(this);
     }
   },
   
