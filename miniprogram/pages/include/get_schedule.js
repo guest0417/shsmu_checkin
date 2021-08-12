@@ -14,7 +14,7 @@ function getSchedule(page){
     },
     success: function (res) {
       console.log("获取課程信息成功",res);
-      page.setData({list:res.result});
+      page.setData({list:res.result.data});
     },fail: console.error
   })
 }

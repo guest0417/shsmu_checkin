@@ -31,7 +31,6 @@ Page({
     scan_mac.startWifi();
     scan_mac.getLocation();
     scan_mac.getWifiList().then(result=>{checkin.check(that)}); 
-
     // 获取用户数据
     var success = await login_api.getUserInfo(that);
     if(!success)wx.navigateTo({url: '../first_login/index'});
@@ -45,10 +44,10 @@ Page({
     const id = e.currentTarget.id
     const list = this.data.list
     for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
+      if (list[i]._id === id) {
+        list[i].open = !list[i].open;
       } else {
-        list[i].open = false
+        list[i].open = false;
       }
     }
     this.setData({list})
@@ -72,6 +71,7 @@ Page({
   },
   bindRefresh: function(){
     scan_mac.getWifiList().then(result=>{checkin.check(this)});
+    console.log(this.data.list);
   },
   bindDevelop: function(){
     wx.navigateTo({url: 'https://github.com/JamesHoi'});
