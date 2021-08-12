@@ -25,9 +25,10 @@ exports.main = async(event, context) => {
         const promise = db.collection('schedule')
           .add({
             data: {
-              name: row[0], //
-              weekday: row[2], //
-              start_time: row[3], //
+              name: row[0],
+              start_time: row[1],
+              weekday: row[2],
+              location: row[3],
               class: class_,
             }
           })

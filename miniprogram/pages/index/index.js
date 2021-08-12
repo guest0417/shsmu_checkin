@@ -44,11 +44,11 @@ Page({
     /*延時修改時間*/
     setTimeout(() => {
       for (let i = 0, len = this.data.list.length; i < len; ++i) {
-        //check_status.checkStatus(this, this.data.list[i].start_time, i);
+        check_status.checkStatus(this, this.data.list[i].start_time, i);
         let h = Math.floor(this.data.list[i].start_time / 3600); let m = (this.data.list[i].start_time % 3600)/60;
         this.data.list[i].time = (h < 10? "0" + h : h) + ":" + (m < 10? "0" + m : m);
       }
-    },500)
+    },800)
   },
   kindToggle(e) {
     const id = e.currentTarget.id
