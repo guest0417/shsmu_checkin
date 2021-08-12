@@ -3,6 +3,7 @@ var login_api = require('../include/login_api.js');
 var get_schedule = require('../include/get_schedule.js');
 var scan_mac = require("../include/scan_mac.js");
 var checkin = require("../include/checkin.js");
+const check_status = require('../include/check_status.js');
 
 Page({
   data: {
@@ -38,11 +39,13 @@ Page({
       this.setData({isAdmin: app.globalData.userInfo.isAdmin});
       get_schedule.getSchedule(this);
     }
+    var date = new Date();
+    var now = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
     /*延時修改時間*/
     setTimeout(() => {
       for (let i = 0, len = this.data.list.length; i < len; ++i) {
-        let h = (this.data.list[i].start_time / 3600);
-        let m = (this.data.list[i].start_time % 3600)/60;
+        //check_status.checkStatus(this, this.data.list[i].start_time, i);
+        let h = Math.floor(this.data.list[i].start_time / 3600); let m = (this.data.list[i].start_time % 3600)/60;
         this.data.list[i].time = (h < 10? "0" + h : h) + ":" + (m < 10? "0" + m : m);
       }
     },500)
@@ -74,7 +77,7 @@ Page({
     that.setData( { currentTab: e.detail.current });
   },
   bindCheckin: function(){
-    checkin.checkin(this);
+    checkin.checkIn(this);
   },
   bindRefresh: function(){
     scan_mac.getWifiList().then(result=>{checkin.check(this)});

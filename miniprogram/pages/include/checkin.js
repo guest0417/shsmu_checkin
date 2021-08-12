@@ -1,10 +1,8 @@
 module.exports = {
-  checkin: checkin,
+  checkIn: checkin,
   check: check
 }
-
 const app = getApp();
-
 function checkin(page){
   return new Promise(resolve =>{
   wx.cloud.callFunction({
@@ -14,7 +12,6 @@ function checkin(page){
       wifiList: app.globalData.wifiList,
       location: app.globalData.location,
       checkin_mode: app.globalData.checkin_mode,
-      //nickname: app.globalData.userInfo.nickname,
       student_id: app.globalData.userInfo.student_id,
       mode: "checkin"
     },

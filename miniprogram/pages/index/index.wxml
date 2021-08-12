@@ -5,9 +5,9 @@
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" style="font-weight: bold;" data-current="1" bindtap="swichNav">记录</view>
 </view>
 
-<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 50}}px;" bindchange="bindChange">
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight-50}}px;" bindchange="bindChange">
     <swiper-item>
-      <view style="margin-top: 105px; min-height: 100%;">
+      <view style="margin-top: 80px; min-height: 100%;">
         <view style="font-weight: bold;">{{text}}</view>
         <button disabled="{{checkin}}" class="button" bindtap="bindCheckin">{{checkin_text}}</button>
         <button class="button" bindtap="bindRefresh">Refresh</button>

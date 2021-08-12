@@ -8,11 +8,10 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext();
   var date = new Date();
   var day = date.getDay();
-
   if(event.mode == "users"){
     return db.collection('users').where({
       openid: wxContext.OPENID
-    }).get()
+    }).get();
   }else if(event.mode == "schedule"){
     return db.collection('schedule').where({
       class: event.class,
