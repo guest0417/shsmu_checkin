@@ -39,8 +39,6 @@ Page({
       this.setData({isAdmin: app.globalData.userInfo.isAdmin});
       get_schedule.getSchedule(this);
     }
-    var date = new Date();
-    var now = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
     /*延時修改時間*/
     setTimeout(() => {
       for (let i = 0, len = this.data.list.length; i < len; ++i) {

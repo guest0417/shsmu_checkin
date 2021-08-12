@@ -14,27 +14,27 @@ function checkStatus(page, start_time, index){
       start_time : "start_time"
     },
     success: function (res) {
+      let temp = page.data.list;
       if(now > start_time){
-        let temp = page.data.list;
         temp[index].status = "done"
         page.setData({list:temp});
       }
       if(now < start_time && (start_time-now)<2400){
-        let temp = page.data.list;
         temp[index].status = "roaming"
         page.setData({list:temp});
       }
       else{
-        let temp = page.data.list;
         temp[index].status = "disabled"
         page.setData({list:temp});
       }
+      console.log("更新課堂狀態成功"+temp[index].status);
     },fail: function(res){
+      let temp = page.data.list;
       if(now > start_time){
-        let temp = page.data.list;
         temp[index].status = "outdated"
         page.setData({list:temp});
       }
+      console.log("更新課堂狀態成功"+temp[index].status);
     }
   })
 }
