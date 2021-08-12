@@ -14,9 +14,6 @@ exports.main = async (event, context) => {
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
     return Y+"-"+M+"-"+D;
   }
-  function PrefixInteger(num, n) {
-    return (Array(n).join(0) + num).slice(-n);
-  }
   var today = genDate(new Date());
   var date = new Date();
   var now = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();

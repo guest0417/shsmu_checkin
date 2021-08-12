@@ -39,7 +39,7 @@ exports.main = async(event, context) => {
   // 等待所有数据添加完成
   let result = await Promise.all(tasks).then(res => {
     return res
-  }).catch(function(err) {
+  }).catch(err => {
     return err
   })
   return result

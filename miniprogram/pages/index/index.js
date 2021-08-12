@@ -38,8 +38,15 @@ Page({
       this.setData({isAdmin: app.globalData.userInfo.isAdmin});
       get_schedule.getSchedule(this);
     }
+    /*延時修改時間*/
+    setTimeout(() => {
+      for (let i = 0, len = this.data.list.length; i < len; ++i) {
+        let h = (this.data.list[i].start_time / 3600);
+        let m = (this.data.list[i].start_time % 3600)/60;
+        this.data.list[i].time = (h < 10? "0" + h : h) + ":" + (m < 10? "0" + m : m);
+      }
+    },500)
   },
-  
   kindToggle(e) {
     const id = e.currentTarget.id
     const list = this.data.list
