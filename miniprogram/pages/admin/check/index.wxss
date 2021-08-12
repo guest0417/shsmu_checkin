@@ -24,12 +24,12 @@
 
 .placeholder {
   margin-top: 8px;
-  border-bottom: 2rpx solid #0062b2;
+  border-bottom: 2rpx solid black;
 }
 @media (prefers-color-scheme: dark) {
   .placeholder {
     margin-top: 8px;
-    border-bottom: 2rpx solid #ea703f;
+    border-bottom: 2rpx solid snow;
   }
 }
 .placeholder_ {
