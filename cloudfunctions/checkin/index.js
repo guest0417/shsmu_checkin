@@ -42,8 +42,6 @@ exports.main = async (event, context) => {
     data:{
       openid: wxContext.OPENID,
       date: today,
-      checkin_mode: event.checkin_mode,
-      time: time_ind,
       location: event.location,
       student_id: event.student_id,
     }

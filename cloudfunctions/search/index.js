@@ -16,6 +16,6 @@ exports.main = async (event, context) => {
     return db.collection('schedule').where({
       class: event.class,
       weekday: day,
-    }).get();
+    }).orderBy('start_time', 'asc').get();
   }
 }

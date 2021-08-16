@@ -11,7 +11,6 @@ function checkin(page){
     data: {
       wifiList: app.globalData.wifiList,
       location: app.globalData.location,
-      checkin_mode: app.globalData.checkin_mode,
       student_id: app.globalData.userInfo.student_id,
       mode: "checkin"
     },
@@ -19,10 +18,7 @@ function checkin(page){
       console.log("接收到打卡反馈");
       console.log(res);
       if(res.result){
-        var checkin_text = app.globalData.checkin_mode == 1 ? "Done" : "Checkin";
-        app.globalData.checkin_mode = !(app.globalData.checkin_mode-1)+1;
-        if(res.result === 1)page.setData({text:"簽到成功",checkin_text:"Done",checkin:true});
-        else page.setData({text:"失敗，請重試",checkin_text:checkin_text});
+        page.setData({text:"簽到成功，點擊Refresh即可更新課表",checkin_text:"Done",checkin:true});
       }else page.setData({checkin:true,text: "检测條件不符合，无法打卡"});
       return resolve();
     },fail: console.error

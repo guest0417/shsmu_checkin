@@ -9,6 +9,5 @@ App({
     openid: null,
     wifiList: [],
     location: null,
-    checkin_mode: 1,
   }
 })
