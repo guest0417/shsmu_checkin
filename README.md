@@ -1,5 +1,5 @@
 # miniapp-checkin
-a checkin system for students studying in library
+寫到一半被甲方炒了的基于wifi MAC地址做的打卡程序
 
 # Release
 二酱自习人  
